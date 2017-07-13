@@ -1,0 +1,18 @@
+public static void main(String[] args) Exception {
+	        prueba();
+	    }
+		
+		public static void prueba() throws Exception{
+			Connection cn = conexion.Conectar();
+			File file=new File("C:/Users/labtectru/Desktop/archivo.txt");
+			FileInputStream fis = new FileInputStream(file);
+			String sql="INSERT INTO Cliente(nombre, codisla, precio, cantidad)"+
+				"VALUES(?, ?, ?, ?)";
+			PreparedStatement ps = cn.prepareStatement(sql);
+			int x =1;
+			ps.setString(x++,"prueba");
+			ps.setInt(x++,1);
+			ps.setInt(x++,2);
+			ps.setInt(x++,3);
+			ps.executeUpdate();
+		}
